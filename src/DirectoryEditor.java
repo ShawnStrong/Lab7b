@@ -2,60 +2,34 @@
 import java.util.*;
 
 public class DirectoryEditor {
-	static LinkedList<Employee> collection = new LinkedList<Employee>();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		boolean ENDO = false;
+		boolean off = false;
 		Scanner console = new Scanner(System.in);
 		String in;
+		MainDirectory s = new MainDirectory();
 		
-		System.out.println("enter a command CLR , ADD, END");
-		while(!ENDO)
-		{	
+		while(!off){
+			System.out.println("Enter a command CLR, ADD, END");
 			in = console.nextLine();
-			if(in.equalsIgnoreCase("ADD"))
-			{
-				boolean ENDI = false;
-				while(ENDI)
-				{
-					System.out.println("Enter <Your First name>  <Last name>  <Department Name>  <Phone number> //( or end to stop)");
-					in = console.nextLine();
-					if(in.equalsIgnoreCase("END"))
-					{
-						ENDI = true;
-						break;
-					}
-					String[] splitted = in.split("\\s+");
-					if(splitted.length == 4)
-					{
-					Employee name = new Employee(in);
-					collection.add(name);
-					}
-					else
-					{
-					
-						System.out.println("invalid format");
-					}
-				}
-			}
-			else if(in.equalsIgnoreCase("CLR"))
-			{
+			if(in.equalsIgnoreCase("add")){
+				s.add();
+			}else if(in.equalsIgnoreCase("print")){
+				s.print();
+			}else if(in.equalsIgnoreCase("clr")){
+				s.clear();
+			}else if(in.equalsIgnoreCase("end")){
 				
-			}
-			else if(in.equalsIgnoreCase("PRINT"))
-			{
-				//for(Employee i: collection)
-				{
-					
-				}
-			}
-			else if(in.equalsIgnoreCase("END"))
-			{
-				break;
+			}else{
+				System.out.println("Wrong command");
 			}
 			
+			
+			
+			off = false;
 		}
+		console.close();
 	}
 
 }
