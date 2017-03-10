@@ -6,20 +6,23 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 public class MainDirectory implements Directory {
-	
+
 	ArrayList<Employee> sorted = new ArrayList<>();
 
 	@Override
-	public void add() {
+	public void add(String str) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	@Override
 	public void print() {
 		// TODO Auto-generated method stub
-		for(Employee ee : sorted){
-			ee.print();
+		if (sorted.size() == 0) {
+			System.out.println("<empty directory>");
+		} else {
+			for (Employee ee : sorted) {
+				ee.print();
+			}
 		}
 	}
 
@@ -62,9 +65,10 @@ public class MainDirectory implements Directory {
 				}
 			}
 			if (size == sorted.size()) {
-				sorted.add(sorted.size()-1, emp);
+				sorted.add(sorted.size() - 1, emp);
 			}
 		}
-		
+
 	}
+
 }
