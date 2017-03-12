@@ -19,7 +19,7 @@ public class DirectoryEditor {
 			if(in.equalsIgnoreCase("add")){
 				off2 = false;
 				while(!off){
-					System.out.println("Add someone: [first] [last] [dept] [phone]");
+					System.out.println("Add someone: [first] [last] [dept] [phone] or End to end.");
 					in = console.nextLine();
 					if(in.equalsIgnoreCase("end")){
 						off = true;
